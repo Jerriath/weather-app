@@ -1,7 +1,9 @@
-import { getCurrentForecast, getHourlyForecast } from "./getWeather.js";
+import { getForecast } from "./getWeather.js";
+import { fillActiveInfo } from "./currentWeather.js"
 import getBackground from "./background.js"
 
 
-
-getCurrentForecast("orlando");
 getBackground();
+let forecast = getForecast("orlando");
+
+fillActiveInfo(forecast);

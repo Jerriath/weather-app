@@ -10,4 +10,70 @@ body {
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    z-index: -10;
+    filter: brightness(0.5);
+}
+
+#activeForecast {
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 100px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+#activeCity {
+    height: 15%;
+    width: 94%;
+    font-size: 50px;
+    margin: 0px 3%;
+    text-decoration: underline;
+}
+
+#activeWeatherDiv {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 50%;
+}
+
+#activeImg {
+    height: 130px;
+    width: auto;
+    padding: 15px 0px;
+}
+
+#activeWeather {
+    width: 200px;
+    height: 100px;
+    margin: 0;
+    font-size: 40px;
+    padding: 30px 0px;
+    text-align: left;
+}
+
+#activeTemps {
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+    width: 47%;
+    margin-left: 3%;
+}
+
+#activeHigh {
+    width: 60%;
+    font-size: 40px;
+}
+
+#activeLow {
+    width: 40%;
+    font-size: 30px;
 }

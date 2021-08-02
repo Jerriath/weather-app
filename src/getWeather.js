@@ -1,6 +1,6 @@
 let API_KEY = config.API_KEY;
 
-export async function getCurrentForecast(city) {
+export async function getForecast(city) {
     try {
         //Normalizing city text; important for displaying city name on website
         city = city.toLowerCase();
@@ -9,20 +9,25 @@ export async function getCurrentForecast(city) {
         let weather = await data.json();
         let lat = weather.coord.lat;
         let lon = weather.coord.lon;
-        getHourlyForecast(lat, lon, city);
+        let weatherObj =  await getFullForecast(lat, lon);
+        let outputObj = {
+            city: city,
+            current: weatherObj.current,
+            daily: weatherObj.daily,
+            hourly: weatherObj.hourly,
+        };
+        return outputObj;
     }
     catch(err) {
         console.log(err);
     }
 }
 
-export async function getHourlyForecast(lat, lon, city) {
+async function getFullForecast(lat, lon) {
     try {
-        //let data = await fetch("pro.openweathermap.org/data/2.5/forecast/hourly?q=" + city + "appid=" + API_KEY, {mode: "cors"});
-        let data = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=252ade578b106709d98db214d04c504d", {mode: "cors"});
+        let data = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,alerts&appid=252ade578b106709d98db214d04c504d", {mode: "cors"});
         let weather = await data.json();
-        console.log(city);
-        console.log(weather);
+        return weather;
     }
     catch(err) {
         console.log(err);
