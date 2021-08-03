@@ -1,4 +1,4 @@
-import { getScale, toCelsius, toFahrenheit } from "./getWeather.js";
+import { toCelsius, toFahrenheit } from "./getWeather.js";
 
 //Cache DOM
 let activeCity = document.querySelector("#activeCity"); //Title for the city name
@@ -27,7 +27,6 @@ export async function fillActiveInfo(forecast, tempScale) { //I want to refactor
     else {
         convertScale = toFahrenheit;
     }
-    console.log(convertScale);
     activeHigh.textContent = convertScale(forecast.daily[0].temp.max);
     activeLow.textContent = convertScale(forecast.daily[0].temp.min);
     activeFeels.textContent = convertScale(forecast.current.feels_like);

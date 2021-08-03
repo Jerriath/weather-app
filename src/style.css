@@ -64,6 +64,35 @@ p {
     background-color: rgba(254, 254, 254, 0.5);
 }
 
+#searchDiv {
+    position: absolute; 
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin-left: 100px;
+    margin-top: 250px;
+    height: 30px;
+    width: 250px;
+}
+
+#search {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid grey;
+    color: white;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 #activeForecast {
     position: absolute;
     height: 400px;
