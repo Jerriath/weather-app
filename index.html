@@ -5,6 +5,10 @@
         <link rel="stylesheet" href="../src/style.css">
     </head>
     <body>
+        <div id="tempScaleDiv">
+            <h2>C &nbsp; &nbsp; F</h2>
+            <div id="tempScale" class="left"></div>
+        </div>
         <div id="activeForecast">
             <h1 id="activeCity"></h1>
             <div id="activeWeatherDiv">
@@ -12,12 +16,22 @@
                 <p id="activeWeather"></p>
             </div>
             <div id="activeTemps">
+                <p id="highLabel">High: </p>
                 <p id="activeHigh"></p>
+                <p id="lowLabel">Low: </p>
                 <p id="activeLow"></p>
             </div>
+            
             <div id="activeInfo">
-                <p id="activeFeels"></p>
-                <p id="activePop"></p>
+                <div class="infoDiv">
+                    <p>Feels Like: &nbsp;</p>
+                    <p id="activeFeels"></p>
+                </div>
+                <div class="infoDiv">
+                    <p> Precipitation: &nbsp;</p>
+                    <p id="activePop"></p>
+                </div>
+                
                 <p id="activeHumidity"></p>
                 <p id="activePressure"></p>
                 <p id="activeWind"></p>
