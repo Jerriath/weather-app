@@ -1,3 +1,5 @@
+import { getScale, toCelsius, toFahrenheit } from "./getWeather.js";
+
 //Cache DOM
 let activeCity = document.querySelector("#activeCity"); //Title for the city name
 let activeImg = document.querySelector("#activeImg"); //Img for weather conditions (i.e. cloudy, rainy, etc.)
@@ -18,6 +20,18 @@ export async function fillActiveInfo(forecast, tempScale) { //I want to refactor
     activeCity.textContent = forecast.city;
     activeImg.src = "http://openweathermap.org/img/wn/" + forecast.current.weather[0].icon + "@2x.png";
     activeWeather.textContent = forecast.current.weather[0].description;
+    let convertScale = null;
+    if (tempScale === "c") {
+        convertScale = toCelsius;
+    }
+    else {
+        convertScale = toFahrenheit;
+    }
+    console.log(convertScale);
+    activeHigh.textContent = convertScale(forecast.daily[0].temp.max);
+    activeLow.textContent = convertScale(forecast.daily[0].temp.min);
+    activeFeels.textContent = convertScale(forecast.current.feels_like);
+    activePop.textContent = forecast.hourly[0].pop * 100 + "%";
 }
 
 

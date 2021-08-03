@@ -33,3 +33,33 @@ async function getFullForecast(lat, lon) {
         console.log(err);
     }
 }
+
+export function getScale() {
+    let tempScale = document.querySelector("#tempScale");
+    if (tempScale.classList.length !== 0) {
+        return "c";
+    }
+    else {
+        return "f";
+    }
+}
+
+//Function for converting the kelvin scale returned from api call to Celsius
+export function toCelsius(kelvin) {
+    return Math.floor((kelvin - 273.15) * 10) / 10;
+}
+
+//Function for converting the kelvin scale returned from api call to Fahrenheit
+export function toFahrenheit(kelvin) {
+    return Math.floor(((kelvin - 273.15)*9/5 + 32) * 10) / 10 ;
+}
+
+export function switchScale() {
+    let tempScale = document.querySelector("#tempScale");
+    if (tempScale.classList.length !== 0) {
+        tempScale.classList.remove("left");
+    }
+    else {
+        tempScale.classList.add("left");
+    }
+}
