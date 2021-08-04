@@ -1,0 +1,327 @@
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    width: auto;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    width: 80px;
+    position: absolute;
+    top: 7px;
+    left: 17px;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    object-fit: cover;
+}
+
+.background {
+    position: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+    filter: brightness(0.5);
+}
+
+.left {
+    left: 0px !important;
+}
+
+.infoDiv {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 17%;
+    font-size: 25px;
+}
+
+.weeklyDiv {
+    height: 224px;
+    width: 143px;
+    border-right: 1px solid white;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dailyDiv {
+    height: 214px;
+    width: 224px;
+    min-height: 214px;
+    border-right: 1px solid white;
+    margin: auto 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    position: relative;
+    top: 224px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    transition: opacity 0.2s linear;
+}
+
+#tempScaleDiv {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    height: 40px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+#tempScaleDiv:hover #tempScale {
+    background-color: rgba(254, 254, 254, 0.5);
+}
+
+#tempScale {
+    position: relative;
+    height: 80%;
+    width: 40%;
+    border-radius: 10px;
+    border: 5px solid rgba(254, 254, 254, 0.5);
+    left: 50%;
+    transition: all 0.3s;
+}
+
+#searchDiv {
+    position: absolute; 
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin-left: 100px;
+    margin-top: 150px;
+    height: 30px;
+    width: 250px;
+}
+
+#search {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid grey;
+    color: white;
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+    transition: all 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#activeLabel {
+    position: absolute;
+    margin: 0;
+    color: white;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin-left: 450px;
+    margin-top: 150px;
+    text-decoration: underline;
+}
+
+#weeklyLabel {
+    position: absolute;
+    margin: 0;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 205px;
+    margin-left: 810px;
+    text-decoration: underline;
+}
+
+#dailyLabel {
+    position: absolute;
+    margin: 0;
+    color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 620px;
+    margin-left: 100px;
+    text-decoration: underline;
+}
+
+#weeklyForecast {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 250px;
+    width: 1001px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 800px;
+    margin-top: 250px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+#dailyForecast {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 1720px;
+    width: 250px;
+    bottom: 280px;
+    left: 1580px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+}
+
+#activeForecast {
+    position: absolute;
+    height: 400px;
+    width: 650px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 100px;
+    margin-top: 200px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+#activeCity {
+    height: 15%;
+    width: 94%;
+    font-size: 45px;
+    margin: 0px 3%;
+    text-decoration: underline;
+}
+
+#activeWeatherDiv {
+    display: flex;
+    flex-direction: row;
+    height: 40%;
+    width: 50%;
+}
+
+#activeImg {
+    height: 130px;
+    width: auto;
+    padding: 15px 0px;
+    filter: brightness(1.5);
+}
+
+#activeWeather {
+    width: 200px;
+    height: 100px;
+    margin: 0;
+    font-size: 40px;
+    padding: 30px 0px;
+    text-align: left;
+}
+
+#activeTemps {
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+    width: 47%;
+    margin-left: 3%;
+}
+
+#highLabel {
+    font-size: 25px;
+    position: absolute;
+    margin: 0;
+}
+
+#activeHigh {
+    width: 60%;
+    font-size: 40px;
+    position: absolute;
+    margin: 0;
+    top: 250px;
+    left: 50px;
+}
+
+#lowLabel {
+    position: absolute;
+    top: 300px;
+    font-size: 20px;
+    margin: 0;
+}
+
+#activeLow {
+    position: absolute;
+    top: 320px;
+    left: 55px;
+    width: 40%;
+    font-size: 30px;
+    margin: 0;
+}
+
+#activeInfo {
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    width: 47%;
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    border-left: 1px solid white;
+    padding-left: 3%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(254, 254, 254, 0.5);
+}
