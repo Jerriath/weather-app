@@ -13,9 +13,11 @@ export async function fillWeeklyInfo(forecast, tempScale) {
         document.querySelector("#weekly" + i).textContent = getDay(forecast.daily[i].dt);
         document.querySelector("#weekly" + i).style.fontSize = "30px";
         document.querySelector("#weeklyImg" + i).src = "http://openweathermap.org/img/wn/" + forecast.daily[i].weather[0].icon + "@2x.png";
-        document.querySelector("#weeklyHigh" + i).textContent = "H: " + convertScale(forecast.daily[i].temp.max);
+        document.querySelector("#weeklyPop" + i).textContent = "Percipitation: " + (forecast.daily[i].pop * 100) + "%";
+        document.querySelector("#weeklyPop" + i).style.fontSize = "18px";
+        document.querySelector("#weeklyHigh" + i).textContent = "H: " + convertScale(forecast.daily[i].temp.max) + "\xB0";
         document.querySelector("#weeklyHigh" + i).style.fontSize = "30px";
-        document.querySelector("#weeklyLow" + i).textContent = "L: " + convertScale(forecast.daily[i].temp.min);
+        document.querySelector("#weeklyLow" + i).textContent = "L: " + convertScale(forecast.daily[i].temp.min) + "\xB0";
         document.querySelector("#weeklyLow" + i).style.fontSize = "20px";
     }
 }

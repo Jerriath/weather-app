@@ -27,9 +27,9 @@ export async function fillActiveInfo(forecast, tempScale) { //I want to refactor
     else {
         convertScale = toFahrenheit;
     }
-    activeHigh.textContent = convertScale(forecast.daily[0].temp.max);
-    activeLow.textContent = convertScale(forecast.daily[0].temp.min);
-    activeFeels.textContent = convertScale(forecast.current.feels_like);
+    activeHigh.textContent = convertScale(forecast.daily[0].temp.max) + "\xB0";
+    activeLow.textContent = convertScale(forecast.daily[0].temp.min) + "\xB0";
+    activeFeels.textContent = convertScale(forecast.current.feels_like) + "\xB0";
     activePop.textContent = forecast.hourly[0].pop * 100 + "%";
     activeHumidity.textContent = forecast.current.humidity + "%";
     activePressure.textContent = forecast.current.pressure + "hPa";

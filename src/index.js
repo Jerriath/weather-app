@@ -2,6 +2,7 @@ import { getForecast, switchScale, getScale } from "./getWeather.js";
 import { fillActiveInfo } from "./currentWeather.js"
 import { fillWeeklyInfo } from "./weeklyWeather.js"
 import getBackground from "./background.js"
+import { fillyDailyInfo } from "./dailyWeather.js";
 
 let forecast = getForecast("orlando");
 loadPage();
@@ -13,6 +14,7 @@ document.querySelector("#tempScaleDiv").addEventListener("click", switchScale); 
 document.querySelector("#tempScaleDiv").addEventListener("click", function() {
     getBackground();
     fillActiveInfo(forecast, getScale());
+    fillWeeklyInfo(forecast, getScale());
 });
 document.querySelector("#search").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
@@ -33,4 +35,5 @@ function loadPage() {
     getBackground();
     fillActiveInfo(forecast, getScale());
     fillWeeklyInfo(forecast, getScale());
+    fillyDailyInfo(forecast, getScale());
 }
