@@ -5,107 +5,106 @@
         <link rel="stylesheet" href="../src/style.css">
     </head>
     <body>
-        <div id="tempScaleDiv">
-            <h2>C &nbsp; &nbsp; F</h2>
-            <div id="tempScale"></div>
-        </div>
-        <div id="searchDiv">
-            <input type="text" id="search" placeholder="Search a City...">
-        </div>
-        <h1 id="activeLabel">Active Forecast: </h1>
-        <div id="activeForecast">
-            <h1 id="activeCity"></h1>
-            <div id="activeWeatherDiv">
-                <img id="activeImg">
-                <p id="activeWeather"></p>
+        <div id="container">
+            <div id="tempScaleDiv">
+                <h2>C &nbsp; &nbsp; F</h2>
+                <div id="tempScale"></div>
             </div>
-            <div id="activeTemps">
-                <p id="highLabel">High: </p>
-                <p id="activeHigh"></p>
-                <p id="lowLabel">Low: </p>
-                <p id="activeLow"></p>
+            <div id="searchDiv">
+                <input type="text" id="search" placeholder="Search a City...">
             </div>
-            
-            <div id="activeInfo">
-                <div class="infoDiv">
-                    <p>Feels Like: &nbsp;</p>
-                    <p id="activeFeels"></p>
+            <h1 id="activeLabel">Active Forecast: </h1>
+            <div id="activeForecast">
+                <h1 id="activeCity"></h1>
+                <div id="activeWeatherDiv">
+                    <img id="activeImg">
+                    <p id="activeWeather"></p>
                 </div>
-                <div class="infoDiv">
-                    <p> Precipitation: &nbsp;</p>
-                    <p id="activePop"></p>
+                <div id="activeTemps">
+                    <p id="highLabel">High: </p>
+                    <p id="activeHigh"></p>
+                    <p id="lowLabel">Low: </p>
+                    <p id="activeLow"></p>
                 </div>
-                <div class="infoDiv">
-                    <p>Humidity: &nbsp;</p>
-                    <p id="activeHumidity"></p>
-                </div>
-                <div class="infoDiv">
-                    <p>Pressure: &nbsp;</p>
-                    <p id="activePressure"></p>
-                </div>
-                <div class="infoDiv">
-                    <p>Wind Speed: &nbsp;</p>
-                    <p id="activeWind"></p>
+                
+                <div id="activeInfo">
+                    <div class="infoDiv">
+                        <p>Feels Like: &nbsp;</p>
+                        <p id="activeFeels"></p>
+                    </div>
+                    <div class="infoDiv">
+                        <p> Precipitation: &nbsp;</p>
+                        <p id="activePop"></p>
+                    </div>
+                    <div class="infoDiv">
+                        <p>Humidity: &nbsp;</p>
+                        <p id="activeHumidity"></p>
+                    </div>
+                    <div class="infoDiv">
+                        <p>Pressure: &nbsp;</p>
+                        <p id="activePressure"></p>
+                    </div>
+                    <div class="infoDiv">
+                        <p>Wind Speed: &nbsp;</p>
+                        <p id="activeWind"></p>
+                    </div>
                 </div>
             </div>
+            <h1 id="weeklyLabel">Weekly Forecast:</h1>
+            <div id="weeklyForecast">
+                <div class="weeklyDiv">
+                    <p id="weekly1"></p>
+                    <img id="weeklyImg1">
+                    <p id="weeklyPop1"></p>
+                    <p id="weeklyHigh1"></p>
+                    <p id="weeklyLow1"></p>
+                </div>
+                <div class="weeklyDiv">
+                    <p id="weekly2"></p>
+                    <img id="weeklyImg2">
+                    <p id="weeklyPop2"></p>
+                    <p id="weeklyHigh2"></p>
+                    <p id="weeklyLow2"></p>
+                </div>
+                <div class="weeklyDiv">
+                    <p id="weekly3"></p>
+                    <img id="weeklyImg3">
+                    <p id="weeklyPop3"></p>
+                    <p id="weeklyHigh3"></p>
+                    <p id="weeklyLow3"></p>
+                </div>
+                <div class="weeklyDiv">
+                    <p id="weekly4"></p>
+                    <img id="weeklyImg4">
+                    <p id="weeklyPop4"></p>
+                    <p id="weeklyHigh4"></p>
+                    <p id="weeklyLow4"></p>
+                </div>
+                <div class="weeklyDiv">
+                    <p id="weekly5"></p>
+                    <img id="weeklyImg5">
+                    <p id="weeklyPop5"></p>
+                    <p id="weeklyHigh5"></p>
+                    <p id="weeklyLow5"></p>
+                </div>
+                <div class="weeklyDiv">
+                    <p id="weekly6"></p>
+                    <img id="weeklyImg6">
+                    <p id="weeklyPop6"></p>
+                    <p id="weeklyHigh6"></p>
+                    <p id="weeklyLow6"></p>
+                </div>
+                <div class="weeklyDiv" style="border-right: none">
+                    <p id="weekly7"></p>
+                    <img id="weeklyImg7">
+                    <p id="weeklyPop7"></p>
+                    <p id="weeklyHigh7"></p>
+                    <p id="weeklyLow7"></p>
+                </div>
+            </div>
+            <h1 id="dailyLabel">Hourly Forecast:</h1>
+            <div id="dailyForecast"></div>
         </div>
-        <h1 id="weeklyLabel">Weekly Forecast:</h1>
-        <div id="weeklyForecast">
-            <div class="weeklyDiv">
-                <p id="weekly1"></p>
-                <img id="weeklyImg1">
-                <p id="weeklyPop1"></p>
-                <p id="weeklyHigh1"></p>
-                <p id="weeklyLow1"></p>
-            </div>
-            <div class="weeklyDiv">
-                <p id="weekly2"></p>
-                <img id="weeklyImg2">
-                <p id="weeklyPop2"></p>
-                <p id="weeklyHigh2"></p>
-                <p id="weeklyLow2"></p>
-            </div>
-            <div class="weeklyDiv">
-                <p id="weekly3"></p>
-                <img id="weeklyImg3">
-                <p id="weeklyPop3"></p>
-                <p id="weeklyHigh3"></p>
-                <p id="weeklyLow3"></p>
-            </div>
-            <div class="weeklyDiv">
-                <p id="weekly4"></p>
-                <img id="weeklyImg4">
-                <p id="weeklyPop4"></p>
-                <p id="weeklyHigh4"></p>
-                <p id="weeklyLow4"></p>
-            </div>
-            <div class="weeklyDiv">
-                <p id="weekly5"></p>
-                <img id="weeklyImg5">
-                <p id="weeklyPop5"></p>
-                <p id="weeklyHigh5"></p>
-                <p id="weeklyLow5"></p>
-            </div>
-            <div class="weeklyDiv">
-                <p id="weekly6"></p>
-                <img id="weeklyImg6">
-                <p id="weeklyPop6"></p>
-                <p id="weeklyHigh6"></p>
-                <p id="weeklyLow6"></p>
-            </div>
-            <div class="weeklyDiv" style="border-right: none">
-                <p id="weekly7"></p>
-                <img id="weeklyImg7">
-                <p id="weeklyPop7"></p>
-                <p id="weeklyHigh7"></p>
-                <p id="weeklyLow7"></p>
-            </div>
-        </div>
-        <h1 id="dailyLabel">Hourly Forecast:</h1>
-        <div id="dailyForecast">
-            
-        </div>
-        
         <div id="backgrounds">
             <img id="sunrise" class="background" src="../src/imgs/background/sunrise.jpg">
             <img id="noon" class="background" src="../src/imgs/background/noon.jpg">

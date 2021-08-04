@@ -1,8 +1,9 @@
 import { toCelsius, toFahrenheit } from "./getWeather.js";
 
+//Cache DOM
+let dailyForecast = document.querySelector("#dailyForecast");
+
 export async function fillyDailyInfo(forecast, tempScale) {
-    //Cache the DOM element needed
-    let dailyForecast = document.querySelector("#dailyForecast")
     forecast = await forecast;
     let convertScale = null;
     if (tempScale === "c") {
@@ -11,6 +12,7 @@ export async function fillyDailyInfo(forecast, tempScale) {
     else {
         convertScale = toFahrenheit;
     }
+    removeAllChildren();
     for (let i = 0; i < 25; i++) { //25 because I want to have 25 different hours; from now to same time tomorrow
         let newHour = document.createElement("div");
         newHour.classList.add("dailyDiv");
@@ -19,7 +21,7 @@ export async function fillyDailyInfo(forecast, tempScale) {
         newTime.style.fontSize = "30px";
         let newImg = document.createElement("img");
         newImg.src = "http://openweathermap.org/img/wn/" + forecast.hourly[i].weather[0].icon + "@2x.png";
-        newImg.style.transform = "scale(.8)";
+        newImg.style.transform = "scale(.6)";
         let newPop = document.createElement("p");
         newPop.textContent = "Percipitation: " + Math.floor(forecast.hourly[i].pop * 10000) / 100 + "%";
         newPop.style.fontSize = "20px";
@@ -34,7 +36,6 @@ export async function fillyDailyInfo(forecast, tempScale) {
         
         dailyForecast.appendChild(newHour);
     }
-    removeAllChildren(dailyForecast);
 }
 
 //Function for getting the time of day from utc seconds
@@ -58,10 +59,8 @@ function getHour(seconds) {
 }
 
 //Function to remove all child Elements from dailyForecast; Needed to remake new elements
-async function removeAllChildren(dailyForecast) {
-    dailyForecast = await dailyForecast;
-    dailyForecast.childNodes.forEach(function(child) {
-        console.log(child);
-        child.remove();
-    })
+async function removeAllChildren() {
+    while(dailyForecast.firstChild) {
+        dailyForecast.firstChild.remove();
+    }
 }
