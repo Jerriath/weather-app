@@ -3,13 +3,7 @@ export async function getForecast(city) {
         //Normalizing city text; important for displaying city name on website
         city = city.toLowerCase();
         city = city.charAt(0).toUpperCase() + city.slice(1);
-        let url = null;
-        if (location.protocol === "http:") {
-            url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=252ade578b106709d98db214d04c504d";
-        }
-        else {
-            url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=252ade578b106709d98db214d04c504d"
-        }
+        let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=252ade578b106709d98db214d04c504d";
         let data = await fetch(url, {mode: "cors"});
         let weather = await data.json();
         let lat = weather.coord.lat;
@@ -30,13 +24,7 @@ export async function getForecast(city) {
 
 async function getFullForecast(lat, lon) {
     try {
-        let url = null;
-        if (location.protocol === "http:") {
-            url = "http://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,alerts&appid=252ade578b106709d98db214d04c504d"
-        }
-        else {
-            "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,alerts&appid=252ade578b106709d98db214d04c504d"
-        }
+        let url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,alerts&appid=252ade578b106709d98db214d04c504d";
         let data = await fetch(url, {mode: "cors"});
         let weather = await data.json();
         return weather;
